@@ -14,15 +14,6 @@
 						<th width="15%"></th>
 					</tr>
 				</thead>
-				<tfoot>
-				<tr>
-					<th>Foto</th>
-					<th>Empresa</th>
-					<th>Usuario</th>
-					<th>Fecha</th>
-					<th></th>
-				</tr>
-				</tfoot>
 				<tbody>
 				@foreach ($tarjetas as $tarjeta)
 					<tr>
