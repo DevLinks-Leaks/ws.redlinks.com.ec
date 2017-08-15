@@ -66,7 +66,7 @@ class TarjetaHabienteEmpresaController extends Controller
         if (!File::exists($path))
             File::makeDirectory($path, 0777, true);
 
-        $path = $path.$tf->id.'.jpeg';
+        $path = $path.$tf->id.'.jpg';
         $success = file_put_contents($path, $data);
         return response()->json(array("result"=>"success"));
     }

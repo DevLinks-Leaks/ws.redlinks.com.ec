@@ -17,13 +17,13 @@
 				<tbody>
 				@foreach ($tarjetas as $tarjeta)
 					<tr>
-						<td><img title="" class="thumbnail zoom" src="{{ asset('/img/credenciales') }}/{{ $tarjeta->tarjetahabienteempresa->empresa->id }}/{{ $tarjeta->id }}.jpeg" /></td>
+						<td><img title="" class="thumbnail zoom" src="{{ asset('/img/credenciales') }}/{{ $tarjeta->tarjetahabienteempresa->empresa->id }}/{{ $tarjeta->id }}.jpg" /></td>
 						<td>{{ $tarjeta->tarjetahabienteempresa->empresa->razon_social }}</td>
 						<td>{{ $tarjeta->tarjetahabienteempresa->tarjetahabiente->nombre_1 }} {{ $tarjeta->tarjetahabienteempresa->tarjetahabiente->apellido_1 }}</td>
 						<td>{{ $tarjeta->created_at }}</td>
 						<td>
 							<div class="btn-group btn-group-sm" role="group">
-								<a class="btn btn-default" title="Descargar foto" target="_blank" href="{{ asset('/img/credenciales') }}/{{ $tarjeta->tarjetahabienteempresa->empresa->id }}/{{ $tarjeta->id }}.jpeg"><span class="glyphicon glyphicon-save"></span></a>
+								<a class="btn btn-default" title="Descargar foto" target="_blank" href="{{ asset('/img/credenciales') }}/{{ $tarjeta->tarjetahabienteempresa->empresa->id }}/{{ $tarjeta->id }}.jpg"><span class="glyphicon glyphicon-save"></span></a>
 								<a class="btn btn-default" title="Rechazar" href="observacion/{{ $tarjeta->id }}"><span class="glyphicon glyphicon-remove"></span></a>
 								<a class="btn btn-default" title="Aprobar" href="{{ $tarjeta->id }}/A/cambiarEstado"><span class="glyphicon glyphicon-ok"></span></a>
 							</div>

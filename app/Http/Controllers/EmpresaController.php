@@ -176,7 +176,7 @@ class EmpresaController extends Controller
         foreach ($the as $the_row){
             $tf = $the_row->tarjetafisicas->where('estado','P');
             foreach ($tf as $tf_row){
-                $array_fotos[] = 'img/credenciales/' . $id . '/' . $tf_row->id . '.jpeg';
+                $array_fotos[] = 'img/credenciales/' . $id . '/' . $tf_row->id . '.jpg';
             }
         }
         if (count($array_fotos)>0){

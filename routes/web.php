@@ -15,6 +15,28 @@ Route::get('/', function () {
   $cont_pend = App\TarjetaFisica::where('estado','P')->count();
   return view('main',compact('cont_pend'));
 });
+Route::get('/getApp', function () {
+  $user_agent = $_SERVER['HTTP_USER_AGENT'];  
+ switch( true ) 
+       {
+        case preg_match('/iphone|ipad/si',$user_agent): 
+        $url = 'https://itunes.apple.com/es/app/facebook/id284882215?mt=8'; 
+        break;          
+        case stristr($user_agent, 'android'):   
+        $url = 'https://play.google.com/store/apps/details?id=com.facebook.katana&hl=es';    
+        break;   
+        case stristr($user_agent, 'windows phone'):      
+        $url = 'http://www.windowsphone.com/es-es/store/app/facebook/82a23635-5bd9-df11-a844-00237de2db9e';             
+            break;          
+        case stristr($user_agent, 'blackberry'): 
+        $url = 'https://appworld.blackberry.com/webstore/content/680/?lang=es&countrycode=ES';            
+            break;      
+    default:        
+            $url = 'http://www.facebook.com';   
+        break; 
+ }  
+header( 'Location: ' . $url ); 
+});
 Route::post('/login','TarjetaHabienteController@login')->middleware('cors');
 Route::post('/logout','TarjetaHabienteController@logout')->middleware('cors');
 Route::get('/noticias', 'NoticiaController@index');

@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'subdomain' => env('SUBDOMAIN', 'dev'),
+    'subdomain' => env('SUBDOMAIN', 'ws'),
 
     /*
     |--------------------------------------------------------------------------
